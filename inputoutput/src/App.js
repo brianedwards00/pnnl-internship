@@ -1,5 +1,9 @@
 import React from 'react';
 import './App.css';
+import Graph from "./graph";
+import raw from 'raw.macro'
+
+//Must npm install chart.js and raw.macro
 
 
 
@@ -9,10 +13,11 @@ constructor() {
     this.state ={in: true,
     out: false}
     this.handleSubmit= this.handleSubmit.bind(this)
+
 }
 
 
-handleSubmit(event) {
+    handleSubmit(event) {
     event.preventDefault()
     return(
         <h1>
@@ -20,7 +25,9 @@ handleSubmit(event) {
         </h1>
     )
 }
+
   render() {
+    const markdown = raw('./data.txt')
     return(
         <div>
             <form onSubmit={this.handleSubmit}>
@@ -35,6 +42,8 @@ handleSubmit(event) {
                 <button>Submit</button>
             </form>
 
+            <Graph/>
+            <h1>{markdown}</h1>
         </div>
     )
   }
