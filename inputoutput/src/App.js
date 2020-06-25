@@ -18,12 +18,13 @@ constructor() {
 
 
     handleSubmit(event) {
-    event.preventDefault()
+
     return(
         <h1>
             This is my output
         </h1>
     )
+
 }
 
   render() {
